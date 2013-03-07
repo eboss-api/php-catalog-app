@@ -19,7 +19,14 @@ Please see config.php for the configuration variables.
 Requirements
 ------------
 PHP 5.2+
-PHP-CURL extension
+
+
+Setup
+-----
+
+Download and extract the latest version, along with the [EBOSS REST API PHP Wrapper](https://github.com/eboss-api/php-wrapper)
+
+Create a config.php file (or rename the existing config.example.php) and provide your credentials like in the example.
 
 
 Authors
