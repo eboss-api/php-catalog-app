@@ -1,0 +1,626 @@
+@import url('select2/select2.css');
+/*
+	Typography
+*/
+
+h2 {
+	margin-top: 0;
+	font-size: 18px;
+	line-height: 22px;
+	color: #3f3f3f;
+}
+
+h4 {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #3f3f3f;
+}
+
+h5 {
+	margin-top: 4px;
+	margin-bottom: 12px;
+	font-size: 15px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #a4a4a4;
+}
+
+div, p, ul, li {
+	color: #3f3f3f;
+}
+
+.btn {
+	font-size: 12px;
+	font-weight: 600;
+	color: #3f3f3f;
+}
+
+/*
+	UI Elements
+*/
+
+.action_button {
+	display: inline-block;
+	margin-bottom: 6px;
+	padding: 7px 20px;
+	color: white;
+	font-family: Georgia,serif;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 11px;
+	text-transform: uppercase;
+	background: #3f3f3f;
+	zoom: 1;
+	*display: inline;
+	_height: 0;
+}
+
+.action_button:hover, .action_button:focus {
+	font-size: 11px;
+	color: white;
+	text-decoration: none;
+	background-color: #5c5a58;
+}
+
+.select2-drop .select2-results .select2-result.select2-highlighted .select2-result-label {
+	color: white;
+}
+
+
+/*
+	Layout
+*/
+
+#Header {
+	padding-bottom: 45px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #d5d3cd;
+}
+
+.downloads #Header {
+	display: none;
+}
+
+#Sidebar p, ul, li, a {
+	font-size: 12px;
+	color: #a4a4a4;
+}
+
+a:hover, a:active {
+	color: #a4a4a4;
+}
+
+#Sidebar {
+	width:230px;
+	margin-left: 0;
+	padding-right: 30px;
+}
+
+#Sidebar .menu {
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #d5d3cd;
+}
+
+#Sidebar .menu .range_menu,
+#Sidebar .menu .category_menu {
+	margin-left: 0;
+	list-style-type: none;
+}
+
+
+#Sidebar .menu .range_menu li,
+#Sidebar .menu .category_menu li {
+	margin-bottom: 5px;
+}
+
+#Sidebar .menu .range_menu li a,
+#Sidebar .menu .category_menu li a {
+	font-weight: 300;
+	color: #666;
+	display: block;
+	padding: 6px 14px;
+	line-height: 14px;
+	background: #dddcd8;
+}
+
+#Sidebar .menu .range_menu li.current a,
+#Sidebar .menu .category_menu li.current a,
+#Sidebar .menu .range_menu li a:hover,
+#Sidebar .menu .category_menu li a:hover {
+	background: #3f3f3f;
+	color: white;
+}
+
+#Sidebar #RangesMenu {
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+#Sidebar #ContactMenu {
+	border-bottom: 0;
+}
+
+#Main {
+	margin-left: 0;
+	margin-bottom: 60px;
+	padding-left: 30px;
+	border-left: 1px solid #d5d3cd;
+}
+
+#Main #BrandImage {
+	margin-top: 5px;
+	margin-bottom: 30px;
+}
+
+#Main.span9 {
+	width: 710px;
+}
+
+#Main.span6 {
+	margin-right:10px;
+}
+
+#Main #RangeDescription {
+	margin-bottom: 20px;
+}
+
+#Main #ProductListings .thumbnail {
+	display:block;
+	width:101px;
+	height:70px;
+	margin-top: 3px;
+	margin-bottom: 18px;
+	background:#dddcd8;
+}
+
+#Main #ProductListings .heading {
+	margin-top: 0;
+	margin-bottom: 5px;
+	line-height: 12px;
+}
+
+#Main #ProductListings .heading a {
+	font-size: 14px;
+	font-weight: 300;
+	color: #3f3f3f;
+}
+
+#Main #ProductListings .updated {
+	margin-bottom: 0;
+}
+
+#Main #ProductListings .updated span {
+	margin-right: 6px;
+	padding: 4px 6px;
+	font-size: 10px;
+	font-weight: 300;
+	color: white;
+	background: #bfbcb7;
+}
+
+#Main #ProductListings .downloads_list {
+	margin-left: 0;
+	text-transform: uppercase;
+	list-style-type: none;
+}
+
+#Main #ProductListings .downloads_list li {
+	display: inline;
+	margin-right: 10px;
+	font-size: 10px;
+	font-weight: 300;
+	color: #3f3f3f;
+}
+
+#Main #ProductImages {
+	height: 230px;
+	border: 10px solid #3f3f3f;
+	overflow: hidden;
+}
+
+#Main .carousel-control {
+	top: 50%;
+}
+
+#Main #ProductNumber {
+	font-size: 16px;
+	color: #bfbcb7;
+}
+
+#Main #ProductDescription {
+	margin-bottom: 60px;
+}
+
+#Main #ProductCompliance {
+	margin-top: 30px;
+}
+
+#Main #ProductCompliance h3 {
+	margin-top: 0;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+#Main #ProductCompliance hr {
+	margin: 15px 0 30px 0;
+}
+
+#Main #ProductCompliance .compliance_tag {
+	margin-bottom: 15px;
+}
+
+#Main #ProductCompliance .compliance_tag img {
+	display: inline-block;
+	*display: inline;
+	margin-right: 3px;
+	margin-bottom: 0;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+#Main #ProductCompliance .compliance_tag a {
+	display: inline-block;
+	*display: inline;
+	vertical-align: middle;
+	font-size: 10px;
+	zoom: 1;
+}
+
+#Main #ProductCompliance .compliance_tag .popover {
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#Main #ProductCompliance .compliance_tag .popover .popover-title {
+	padding-bottom: 0;
+	font-size: 13px;
+	font-weight: 300;
+	color: #a4a4a4;
+	background-color: white;
+	border-bottom: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+#Main #ProductCompliance .compliance_tag .popover .popover-content {
+	padding-top: 3px;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+#ProductInformation .information_type {
+	margin-bottom: 15px;
+	padding: 8px 20px 0;
+	background-image: linear-gradient(transparent 0%,transparent 0%),linear-gradient(90deg, transparent 0%,transparent 0%),linear-gradient(#e1dfd9 1px,transparent 1px),linear-gradient(90deg, #e1dfd9 1px,transparent 1px);
+	background-image: -webkit-linear-gradient(#fff 0, transparent 0),-webkit-linear-gradient(0deg, #fff 0, transparent 0),-webkit-linear-gradient(#e1dfd9 1px, transparent 1px),-webkit-linear-gradient(0deg, #e1dfd9 1px, transparent 1px);
+	background-size: 5px 5px, 5px 5px, 5px 5px, 5px 5px;
+	background-position: -1px -1px;
+	border: solid 1px #d5d3cd;
+}
+
+#ProductInformation .information_type h4 {
+	margin-top: 3px;
+	margin-bottom: 5px;
+}
+
+#ProductInformation .information_type ul {
+	margin-left: 0;
+	list-style-type: none;
+}
+
+#ProductInformation .information_type ul li a {
+	font-size: 13px;
+	font-weight: 300;
+	color: #666;
+}
+
+#Footer div {
+	margin-bottom: 30px;
+	text-align: right;
+	font-size: 13px;
+	color: #a4a4a4;
+}
+
+#Footer a {
+	font-size: 13px;
+	text-decoration: underline;
+}
+
+img {
+	margin-bottom: 20px;
+}
+
+hr {
+	margin:0 0 16px 0;
+	border-bottom:solid 1px #d5d3cd;
+}
+
+.clean_list {
+	margin-left: 0;
+	list-style-type: none;
+}
+
+.logo_box {
+	text-align: center;
+	margin-bottom: 18px;
+	background: #dddcd8;
+	border: 10px solid #3f3f3f;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+}
+
+.logo_box img {
+	margin-bottom: 0;
+}
+
+.thumbnail {
+	display: block;
+	padding: 0;
+	border: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: 0;
+	-moz-transition: 0;
+	-o-transition: 0;
+	transition: 0;
+}
+
+/*
+	Individual page styles
+*/
+
+body.index #Main #ProductListings .thumbnail {
+	width: 65px;
+	height: 65px;
+}
+
+body.index #Main #ProductListings .heading {
+	margin-bottom:7px;
+	line-height: 8px;
+}
+
+body.index #Main #ProductListings .heading a{
+	font-size: 12px;
+	line-height: 10px;
+}
+
+body.index #Main #ProductListings .heading + em {
+	display: block;
+	margin-bottom: 15px;
+	font-family: Georgia "Times New Roman", Times, serif;
+	font-size: 12px;
+	color: #a4a4a4;
+}
+
+body.index #Main #ProductListings .updated span{
+	font-size: 9px;
+}
+
+body.index #Sidebar #DownloadButton,
+body.product #Sidebar #DownloadButton {
+	display: none;
+}
+
+/*
+ * Download Tool
+*/
+
+#DownloadModal {
+	width: 1015px;
+	height: 520px;
+	margin-left: -508px;
+	border: 0;
+	border-radius: 0;
+	overflow: hidden;
+}
+
+#DownloadModal .close {
+	position: absolute;
+	right: 40px;
+	top: 30px;
+	font-size: 30px;
+	opacity: 0.1;
+	filter: alpha(opacity=10);
+}
+
+#DownloadModal .close:hover,
+#DownloadModal .close:focus {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
+#DownloadTool {
+	margin:30px;
+}
+
+#DownloadTool .disabled {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
+#DownloadTool #Search {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #d5d3cd;
+}
+
+#DownloadTool #Search #BrandLogo {
+	width: 200px;
+	margin-bottom: 20px;
+	border: 10px solid #3f3f3f;
+	background: #dddcd8;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+}
+
+#DownloadTool #Search #BrandLogo img {
+	margin-bottom:0;
+}
+
+#DownloadTool #Search #QuickFind {
+	margin-top: 25px;
+	text-align: center;
+}
+
+#DownloadTool #Search #QuickFind .heading {
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom:25px;
+	padding: 0;
+	font-family: Georgia,serif;
+	font-size: 14px;
+	font-weight: 300;
+	font-style: italic;
+	line-height: 35px;
+	color: #666;
+	border-top: solid 1px #bfbcb7;
+	border-bottom: solid 1px #bfbcb7;
+	zoom: 1;
+	*display: inline;
+	_height: 0;
+}
+
+#DownloadTool #Search #QuickFind form .select2-container {
+	text-align: left;
+}
+
+#DownloadTool .downloads-sidebar #ProductImage {
+	width: 180px;
+	height: 100px;
+	margin-bottom: 20px;
+	border: 10px solid #3f3f3f;
+	background: #dddcd8;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+	overflow: hidden;
+}
+
+#DownloadTool .downloads-main {
+	border-left: 1px solid #D5D3CD;
+
+}
+
+#DownloadTool .downloads-sidebar #ProductImage img {
+	margin-bottom: 0;
+}
+
+#DownloadTool .downloads-sidebar .heading {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 19px;
+	text-transform: none;
+	border-bottom: solid 1px #d5d3cd;
+}
+
+#DownloadTool .downloads-sidebar p {
+	margin-bottom: 20px;
+	font-size: 13px;
+	color: #9f9d9a;
+}
+
+#DownloadTool #DownloadForm {
+	margin-left: 20px;
+}
+
+#DownloadTool #DownloadForm .accordion-group {
+	border: 0;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-heading {
+	margin-top:10px;
+	background: rgb(235, 235, 235);
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-heading.first {
+	margin-top: 0;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-heading .accordion-toggle {
+	padding:8px 20px;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-heading .heading {
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body {
+	border-left: 4px solid #dddcd8;
+	border-right: 4px solid #dddcd8;
+}
+
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner {
+	padding: 0 0 0 0;
+	border-top: 0;
+	border-bottom: 4px solid #dddcd8;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .span12 {
+	min-height: 0px;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .toggle-row .span12 {
+	text-align: right;
+	padding: 10px;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .heading {
+	margin-top: 0;
+	margin-bottom: 6px;
+	font-size: 14px;
+	font-weight: 300;
+	text-transform: none;
+	color: #9f9d9a;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .field-row {
+	border-top: 4px solid #dddcd8;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .field-row.odd {
+	background: #e8e7e3;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .field-row .span6 {
+	padding: 10px;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .field-row .checkbox {
+	float: none;
+	display: inline;
+	margin-right: 30px;
+	padding-left: 0;
+	font-size: 12px;
+	color: #9f9d9a;
+	text-transform: uppercase;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .toggle-row .checkbox {
+	margin-right: 0;
+	margin-left: 30px;
+	text-transform: none;
+}
+
+#DownloadTool #DownloadForm .accordion-group .accordion-body .accordion-inner .field-row .checkbox input {
+	margin-top: -3px;
+	margin-right: 3px;
+	margin-left: 0;
+}
+
+
+
