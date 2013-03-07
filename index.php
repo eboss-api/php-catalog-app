@@ -1,7 +1,11 @@
 <?php
 
 require("config.php");
-include("EbossAPIClient.php");
+if(file_exists("EbossAPIClient.php")) {
+	include("EbossAPIClient.php");
+} else {
+	die("Please download and extract EbossAPIClient.php from <a href=\"https://github.com/eboss-api/php-wrapper\">Github</a>");
+}
 
 //TODO: make me nicer
 function display_link($action, $params = array()) {
