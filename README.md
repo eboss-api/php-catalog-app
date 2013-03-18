@@ -5,7 +5,7 @@ EBOSS PHP API Catalog application
 Introduction
 ------------
 This is a PHP API Catalog application for the [EBOSS REST API](https://github.com/eboss-api/api-docs). 
-This allows suppliers to quickly publish their products from the EBOSS website obn their own server.
+This allows suppliers to quickly publish their products from the EBOSS website on their own server.
 
 
 Access
