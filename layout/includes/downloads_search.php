@@ -1,5 +1,5 @@
 <h3 class="heading">Product Download Bundler</h3>
-<form action="/index.php" method="get">
+<form action="<?php echo $catalog_base_url; ?>" method="get">
 	<select id="CategoriesRangesSelect" name="cat_range_id">
 		<option></option>
 		<?php $categories = $client->Categories($current_brand_id); ?>

@@ -7,10 +7,15 @@ if(file_exists("EbossAPIClient.php")) {
 	die("Please download and extract EbossAPIClient.php from <a href=\"https://github.com/eboss-api/php-wrapper\">Github</a>");
 }
 
+global $catalog_base_url;
+$catalog_base_url = (isset($catalog_base_url)) ? $catalog_base_url : "index.php";
+
+
 //TODO: make me nicer
 function display_link($action, $params = array()) {
+	global $catalog_base_url;
 	$query = http_build_query($params);
-	return "index.php?action={$action}&amp;".$query;
+	return "{$catalog_base_url}?action={$action}&amp;{$query}";
 }
 
 
