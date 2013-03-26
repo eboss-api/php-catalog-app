@@ -1,13 +1,13 @@
 <div id="RangesMenu" class="menu">
 	<h5 class="heading">Products by range</h5>
 	<?php $ranges = $client->Ranges($current_brand_id); ?>
-	<?php echo build_menu($ranges, "range",  function($range) { return array("range_id" => $range->ID); }, $current_range_id ); ?>
+	<?php echo build_menu($ranges, "range", create_function('$range', 'return array("range_id" => $range->ID);'), $current_range_id); ?>	
 </div>
 
 <div id="CategoriesMenu" class="menu">
 	<h5 class="heading">Products by category</h5>
 	<?php $categories = $client->Categories($current_brand_id); ?>
-	<?php echo build_menu($categories, "category",  function($category) { return array("category_id" => $category->ID); }, $current_category_id); ?>
+	<?php echo build_menu($categories, "category",  create_function('$category', 'return array("category_id" => $category->ID);'), $current_category_id); ?>
 </div>
 
 <?php if($current_brand->BrandInformation): ?>
