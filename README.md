@@ -27,11 +27,11 @@ Setup
 -----
 
 1. Download the zip files from github.
-2. Extract the zip files which should leave two folders (one for the wrapper and one for the app).  
+2. Extract the zip files.  
 3. Edit the "config.example.php" to add in the API username, key (password) and brand ID supplied to you by EBOSS.  Then rename the file to "config.php".
-4. Combine the contents of the downloaded zip files to one folder you create on your server via FTP. We suggest creating a directory folder (eg "architects" so it can be found at "supplier.co.nz/architects") that's included in your navigation menu.
+4. Upload the contents of the extracted folder to a folder you create on your server via FTP. We suggest creating a directory folder (eg "architects" so it can be found at "supplier.co.nz/architects") that's included in your navigation menu.
 5. To add your own header or footer, you can edit the files in the "layout > includes" folder to paste in your header or footer code.
-6. This app is designed to look good out of the box, however if necessary, styles can be tweaked in the "layout > css" folder.
+6. This app is designed to look good out of the box, however if necessary, basic styles can be tweaked in the "layout > css" folder.
 
 1-4 should not take longer than 30 minutes to complete. We advise checking with your client before doing any work that requires additional hours outside of the two hours we have told them as an estimate of implementation time.
 
