@@ -18,7 +18,7 @@ Please see config.php for the configuration variables.
 
 Requirements
 ------------
-PHP 5.3+
+PHP 5.2 (5.3 recommended)
 
 Please see [EBOSS REST API PHP Wrapper](https://github.com/eboss-api/php-wrapper) for any additional requirements
 
