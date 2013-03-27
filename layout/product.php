@@ -73,7 +73,7 @@
 			<h4 class="heading"><?php echo $key; ?></h4>
 			<ul>
 			<?php foreach($informationType as $document): ?>
-			<li><a href="<?php echo $document->URL; ?>" target="_blank"><?php echo $document->Title; ?></a></li>
+			<li><?php echo $document->Tag; ?></li>
 			<?php endforeach; ?>
 			</ul>
 		</div>
