@@ -20,13 +20,13 @@ Requirements
 ------------
 PHP 5.2 (5.3 recommended)
 
-Please see [EBOSS REST API PHP Wrapper](https://github.com/eboss-api/php-wrapper) for any additional requirements
+PHP curl extension installed or fopen enabled for external URLS
 
 
 Setup
 -----
 
-Download and extract the latest version, along with the [EBOSS REST API PHP Wrapper](https://github.com/eboss-api/php-wrapper)
+Download and extract the latest version.
 
 Create a config.php file (or rename the existing config.example.php) and provide your credentials like in the example.
 
