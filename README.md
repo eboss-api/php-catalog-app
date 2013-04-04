@@ -37,7 +37,7 @@ This is the easiest (and fastest)
    
    You should be able to see and browse the catalogue on via the url http://www.supplier.co.nz/catalogue/
 
-5. Put the following snippet on the page within your siteyou want the downloader to appear on:
+5. Put the following snippet on the page within your site, where you want the downloader to appear (please update the url):
    ``<script type="text/javascript" id="EbossCatalogue" src="http://supplier.co.nz/catalogue/embed.js"></script>``
 
 6. This app is designed to look good out of the box, however if necessary, basic styles can be tweaked in the "layout > css" folder.
