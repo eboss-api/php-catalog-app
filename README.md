@@ -35,7 +35,7 @@ This is the easiest (and fastest)
 3. Edit the "config.example.php" to add in the API username, key (password) and brand ID supplied to you by EBOSS.  Then rename the file to "config.php".
 4. Upload the contents of the extracted folder to a folder you create on your server via FTP. We suggest creating a directory folder (eg "catalogue" so it can be found at "supplier.co.nz/catalogue") that's included in your navigation menu.
    
-   You should be able to see and browse the catalogue on via the url http://www.supplier.co.nz/catalogue/
+   You should be able to see and browse the catalogue on via the url http://supplier.co.nz/catalogue/
 
 5. Put the following snippet on the page within your site, where you want the downloader to appear (please update the url):
    ``<script type="text/javascript" id="EbossCatalogue" src="http://supplier.co.nz/catalogue/embed.js"></script>``
