@@ -28,7 +28,7 @@ Setup
 
 There are many ways of integrating the app into your site.
 
-This is the easiest (and fastest)
+The easiest (and fastest) is to insert an iFrame via a script:
 
 1. [Download the zip files from github](https://github.com/eboss-api/php-catalog-app/archive/master.zip)
 2. Extract the zip files.
