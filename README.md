@@ -40,7 +40,7 @@ The easiest (and fastest) is to insert an iFrame via a script:
 
 This should not take longer than 30 minutes to complete. We advise checking with your client before doing any work that requires additional hours outside of the two hours we have told them as an estimate of implementation time.
 
-If you require a more seamless integration, undertake steps 1-4 but to utilise your own header and footer you will need to enter your code in the header and footer files in the "layout > includes" folder. You may need to make necessary code modifications for this to work seamlessly depending on your website set up. An intermediate knowledge of PHP is recommended.
+If you require a more seamless integration, undertake steps 1-4 but to utilise your own header and footer you will need to enter your code in the header and footer files in the "layout > includes" folder. You may need to make necessary code modifications for this to work seamlessly depending on your website set up. An intermediate knowledge of PHP, HTML and javascript is required.
 
 
 Authors
