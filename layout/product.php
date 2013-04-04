@@ -78,7 +78,7 @@
 			</ul>
 		</div>
 		<?php endforeach; ?>
-		<a class="action_button" href="#DownloadModal" role="button" data-toggle="modal">Bundle download</a>
+		<a class="bundle_download action_button" href="<?php echo $current_downloader_url; ?>" role="button">Bundle download</a>
 		<?php endif; ?>
 	</div>
 </div>
