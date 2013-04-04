@@ -4,8 +4,27 @@ jQuery(function($) {
 		var targetHeight = document.documentElement ? document.documentElement.scrollHeight : document.body.scrollHeight;
 		window.parent.postMessage("resizeIframe:"+targetHeight,"*");
 	}
+	
+	$(".bundle_download.action_button").on("click", function(e) {
+		e.preventDefault();
+		if(window.self===window.top) {
+			$('#DownloadModal').modal().find("iframe").attr("src", $(this).attr("href"));
+		} else {
+			window.open($(this).attr("href"),"EbossDownloader","width=1015,height:800,scrollbars=yes");
+		}
+	});
 
-	$("a[data-toggle='popover']").popover();
+	$("a[data-toggle='popover']").popover({
+		trigger: 'manual',
+	}).click(function(evt) {
+		evt.stopPropagation();
+		$(this).popover('show');
+	});
+
+	$('html').click(function() {
+		$("a[data-toggle='popover']").popover('hide');
+	});
+
 
 	$.fn.checkboxToggleGroup = function() {
 		$(this).on("change", function() {
@@ -16,6 +35,7 @@ jQuery(function($) {
 	};
 
 	$("input.checkbox.toggle-group").checkboxToggleGroup();
+
 
 	$(".checkbox.toggle-extension").on("change", function(e) {
 		var extension = $(this).data("extension");
