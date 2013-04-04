@@ -1,4 +1,9 @@
 jQuery(function($) {
+	
+	if(window.parent) {
+		var targetHeight = document.documentElement ? document.documentElement.scrollHeight : document.body.scrollHeight;
+		window.parent.postMessage("resizeIframe:"+targetHeight,"*");
+	}
 
 	$("a[data-toggle='popover']").popover();
 
