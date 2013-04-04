@@ -19,6 +19,7 @@ Please see config.php for the configuration variables.
 Requirements
 ------------
 PHP 5.2 (5.3 recommended)
+Content area width of 960 pixels for website implementation
 
 PHP curl extension installed or fopen enabled for external URLS
 
@@ -36,11 +37,11 @@ The easiest (and fastest) is to insert an iFrame via a script:
 4. Upload the contents of the extracted folder to a folder you create on your server via FTP. We suggest creating a directory folder (eg "catalogue" so it can be found at "supplier.co.nz/catalogue") that's included in your navigation menu.  You should be able to see and browse the catalogue via your url (eg http://supplier.co.nz/catalogue/)
 5. To place the catalogue within a page on your website (to integrate it wiht your header and footer) put the following snippet on the page within your site where you want the downloader to appear (updating the URL to the one you have used):
    ``<script type="text/javascript" id="EbossCatalogue" src="http://supplier.co.nz/catalogue/embed.js"></script>``
-6. This app is designed to look good out of the box, however if necessary, basic styles can be tweaked in the "layout > css" folder.
+6. This app is designed to look good out of the box, however if necessary, basic styles can be tweaked in the ``layout > css`` folder.
 
 This should not take longer than 30 minutes to complete. We advise checking with your client before doing any work that requires additional hours outside of the two hours we have told them as an estimate of implementation time.
 
-If you require a more seamless integration, undertake steps 1-4 but to utilise your own header and footer you will need to enter your code in the header and footer files in the "layout > includes" folder. You may need to make necessary code modifications for this to work seamlessly depending on your website set up. An intermediate knowledge of PHP, HTML and javascript is required.
+If you require a more seamless integration, undertake steps 1-4 but to utilise your own header and footer you will need to enter your code in the header and footer files in the ``layout > includes`` folder. You may need to make necessary code modifications for this to work seamlessly depending on your website set up. An intermediate knowledge of PHP, HTML and javascript is required.
 
 
 Authors
