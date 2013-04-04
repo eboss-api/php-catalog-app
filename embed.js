@@ -1,9 +1,17 @@
+/** 
+	Eboss catalog app embed file
+	Include with full path in html wherever you want the catalogue to appear.
+	Eg:
+	<script type="text/javascript" id="EbossCatalogue" src="http://example.com/catalog/embed.js"></script>
+**/
+
 var iframe = document.createElement('iframe');
 var include = document.getElementById('EbossCatalogue');
 var catalogueBase = catalogueBase || include.src.split("embed.js")[0];
 iframe.id="EbossCatalogueIframe";
 iframe.allowtransparency="true";
 iframe.frameborder="0";
+iframe.frameBorder="0";
 iframe.src=catalogueBase;
 iframe.style.width="100%";
 iframe.style.height="500px";
