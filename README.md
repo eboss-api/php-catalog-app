@@ -19,6 +19,7 @@ Please see config.php for the configuration variables.
 Requirements
 ------------
 PHP 5.2 (5.3 recommended)
+
 Content area width of 960 pixels for website implementation
 
 PHP curl extension installed or fopen enabled for external URLS
