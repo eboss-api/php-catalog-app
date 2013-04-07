@@ -36,7 +36,7 @@ The easiest (and fastest) is to insert an iFrame via a script:
 2. Extract the zip files.
 3. Edit the "config.example.php" to add in the API username, key (password) and brand ID supplied to you by EBOSS.  Then rename the file to "config.php".
 4. Upload the contents of the extracted folder to a folder you create on your server via FTP. We suggest creating a directory folder (eg "catalogue" so it can be found at "supplier.co.nz/catalogue") that's included in your navigation menu.  You should be able to see and browse the catalogue via your url (eg http://supplier.co.nz/catalogue/)
-5. To place the catalogue within a page on your website (to integrate it with your header and footer) put the following snippet on the page within your site where you want the downloader to appear (updating the URL to the one you have used):
+5. To place the catalogue within a page on your website (to integrate it with your header and footer) put the following snippet on the page within your site where you want the catalogue to appear (updating the URL to the one you have used):
    ``<script type="text/javascript" id="EbossCatalogue" src="http://supplier.co.nz/catalogue/embed.js"></script>``
 6. This app is designed to look good out of the box, however if necessary, basic styles can be tweaked in the ``layout > css`` folder.
 
