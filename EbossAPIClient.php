@@ -48,6 +48,11 @@ class EbossAPIClient {
 			$response_raw = file_get_contents($url, false, $context);
 		}
 
+		if(!$response_raw) {
+			throw new EbossAPIClient_Exception("Error connecting to EBOSS server", 500);
+			return false;
+		}
+
 		$response = json_decode($response_raw);
 		
 		if($response->Status == "error") {
