@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); ?>
+<?php if($include_header) include("includes/header.php"); ?>
 
 <div class="row-fluid">
 	<div id="Sidebar" class="span3">
@@ -18,4 +18,4 @@
 
 <?php include("includes/download_modal.php"); ?>
 
-<?php include("includes/footer.php"); ?>
+<?php if($include_footer) include("includes/footer.php"); ?>

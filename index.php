@@ -128,4 +128,7 @@ try {
 	$action = "error";
 }
 
+$include_header = true;
+$include_footer = true;
+
 include("layout/{$action}.php");

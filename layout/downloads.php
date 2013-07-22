@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); ?>
+<?php if($include_header) include("includes/header.php"); ?>
 
 <div id="DownloadTool">
 	<div id="Search" class="row-fluid">
@@ -35,4 +35,4 @@
 	</div>
 </div>
 
-<?php include("includes/footer.php"); ?>
+<?php if($include_footer) include("includes/footer.php"); ?>
