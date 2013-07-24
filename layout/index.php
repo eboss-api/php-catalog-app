@@ -23,7 +23,9 @@
 					<div class="row-fluid">
 						<div class="span4">
 							<?php if($updated_product->ThumbnailURL): ?>
-							<img class="thumbnail" src="<?php echo $updated_product->ThumbnailURL; ?>" alt="product thumbnail" />
+							<a href="<?php echo display_link('product', array('product_id' => $updated_product->ID)); ?>">
+								<img class="thumbnail" src="<?php echo $updated_product->ThumbnailURL; ?>" alt="<?php echo $updated_product->Title; ?> Thumbnail" />
+							</a>
 							<?php else: ?>
 							<span class="thumbnail"></span>
 							<?php endif; ?>

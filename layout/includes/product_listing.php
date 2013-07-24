@@ -4,7 +4,9 @@
 		<div class="row-fluid">
 			<div class="span2">
 				<?php if($product->ThumbnailURL): ?>
-				<img class="thumbnail" src="<?php echo $product->ThumbnailURL; ?>" alt="product thumbnail" />
+				<a href="<?php echo display_link('product', array('product_id' => $product->ID)); ?>">
+					<img class="thumbnail" src="<?php echo $product->ThumbnailURL; ?>" alt="<?php echo $product->Title; ?> Thumbnail" />
+				</a>
 				<?php else: ?>
 				<span class="thumbnail"></span>
 				<?php endif; ?>
