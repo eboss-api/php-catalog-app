@@ -180,7 +180,7 @@ class EbossAPIClient_Response extends stdClass implements IteratorAggregate {
 	}
 
 	function Data() {
-		if(isset($this->response->Data)) {
+		if(!empty($this->response->Data)) {
 			return (object)$this->response->Data; 
 		} else {
 			return false;
