@@ -6,7 +6,9 @@
 	</div>
 
 	<div id="Main" class="span9">
+		<?php if($current_brand->ImagePanelURL): ?>
 		<img id="BrandImage" src="<?php echo $current_brand->ImagePanelURL; ?>" />
+		<?php endif; ?>
 
 		<div id="ProductListings">
 			<div class="row-fluid">
