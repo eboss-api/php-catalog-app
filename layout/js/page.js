@@ -14,6 +14,11 @@ jQuery(function($) {
 		}
 	});
 
+	$("a.toggle_downloader").on("click", function(e) {
+		e.preventDefault();
+		$(".bundle_download.action_button").trigger("click");
+	});
+
 	$("a[data-toggle='popover']").popover({
 		trigger: 'manual',
 	}).click(function(evt) {
