@@ -4,7 +4,7 @@ if(file_exists(dirname(__FILE__)."config.php")) {
 	require("config.php");
 }
 
-require("EbossAPIClient.php");
+require_once("EbossAPIClient.php");
 
 global $catalog_base_url;
 $catalog_base_url = (isset($catalog_base_url)) ? $catalog_base_url : "index.php";
@@ -66,7 +66,9 @@ function get_unique_file_extensions($files) {
 	return array_unique($ret);
 }
 
-$client = new EbossAPIClient($api_user, $api_key, $api_base);
+if(empty($client)) {
+	$client = new EbossAPIClient($api_user, $api_key, $api_base);
+}
 
 $actions = array(
 	"index",
