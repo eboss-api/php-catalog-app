@@ -1,14 +1,18 @@
 <?php
 
-require("config.php");
-if(file_exists("EbossAPIClient.php")) {
-	include("EbossAPIClient.php");
-} else {
-	die("Please download and extract EbossAPIClient.php from <a href=\"https://github.com/eboss-api/php-wrapper\">Github</a>");
+if(file_exists(dirname(__FILE__)."config.php")) {
+	require("config.php");
 }
+
+require("EbossAPIClient.php");
 
 global $catalog_base_url;
 $catalog_base_url = (isset($catalog_base_url)) ? $catalog_base_url : "index.php";
+
+
+if(!isset($api_user) || !isset($api_key) || !isset($api_base)) {
+	die("API Credentials not set. Please check your config.");
+}
 
 
 //TODO: make me nicer
