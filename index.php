@@ -1,6 +1,6 @@
 <?php
 
-if(file_exists(dirname(__FILE__)."config.php")) {
+if(file_exists(dirname(__FILE__)."/config.php")) {
 	require("config.php");
 }
 
