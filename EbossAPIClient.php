@@ -200,7 +200,7 @@ class EbossAPIClient_Response extends stdClass implements IteratorAggregate {
 
 class EbossAPIClient_Cache {
 
-	static $ttl = 360;
+	static $ttl = 3600;
 	static $cache_dir;
 
 	function get($name) {
@@ -208,6 +208,9 @@ class EbossAPIClient_Cache {
 		if(isset($_GET['flush'])) {
 			return false;
 		}
+		if(function_exists('apc_fetch')) {
+                        return apc_fetch($name);
+                }
 		if(file_exists($fname)) {
 			if(filemtime($fname)+self::$ttl > time()) {
 				$contents = file_get_contents($fname);
@@ -217,6 +220,9 @@ class EbossAPIClient_Cache {
 	}
 
 	function write($name, $data) {
+		if(function_exists('apc_fetch')) {
+			return apc_store($name, $data, self::$ttl);
+		}
 		$ser_data = serialize($data);
 		return file_put_contents($this->getCacheFilename($name), $ser_data);
 	}
