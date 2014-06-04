@@ -25,8 +25,8 @@ class EbossAPIClient {
 		$url = $this->api_base.$object.$query;
 		$user_agent =  "EBOSS API Client v".self::$version;
 		$auth = "{$this->api_user}:{$this->api_key}";
+		$error = "";
 		
-
 		if(function_exists("curl_init")) {
 			$curl = curl_init();
 			curl_setopt_array($curl, array(
@@ -37,6 +37,7 @@ class EbossAPIClient {
 			));
 
 			$response_raw = curl_exec($curl);
+			$error = curl_error($curl);
 			curl_close($curl);
 		} else {
 			$context = stream_context_create(array(
@@ -46,14 +47,18 @@ class EbossAPIClient {
 				)
 			));
 			$response_raw = file_get_contents($url, false, $context);
+			$error = "";//tbc
 		}
 
 		if(!$response_raw) {
-			throw new EbossAPIClient_Exception("Error connecting to EBOSS server", 500);
+			throw new EbossAPIClient_Exception("Error connecting to EBOSS server: {$error}", 500);
 			return false;
 		}
 
-		$response = json_decode($response_raw);
+		if(!$response = json_decode($response_raw)) {
+			throw new EbossAPIClient_Exception("Empty response", 500);
+			return false;
+		}
 		
 		if($response->Status == "error") {
 			throw new EbossAPIClient_Exception($response->Message, $response->Code);
@@ -208,9 +213,9 @@ class EbossAPIClient_Cache {
 		if(isset($_GET['flush'])) {
 			return false;
 		}
-		if(function_exists('apc_fetch')) {
-                        return apc_fetch($name);
-                }
+		if(function_exists('XXXzapc_fetch')) {
+			return apc_fetch($name);
+		}
 		if(file_exists($fname)) {
 			if(filemtime($fname)+self::$ttl > time()) {
 				$contents = file_get_contents($fname);
@@ -220,7 +225,7 @@ class EbossAPIClient_Cache {
 	}
 
 	function write($name, $data) {
-		if(function_exists('apc_fetch')) {
+		if(function_exists('XXXapc_fetch')) {
 			return apc_store($name, $data, self::$ttl);
 		}
 		$ser_data = serialize($data);
