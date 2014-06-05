@@ -1,13 +1,12 @@
 <?php if($include_header) include("includes/header.php"); ?>
 
-<div id="DownloadTool">
+<div id="Downloads">
 	<div id="Search" class="row-fluid">
 		<div id="BrandLogo" class="span3">
 			<img src="<?php echo $current_brand->LogoURL; ?>" alt="<?php echo $current_brand->Title; ?> Logo"/>
 		</div>
-
-		<div id="QuickFind" class="span9">
-			<?php include("includes/downloads_search.php"); ?>
+		<div class="span9">
+			<h2><?php echo $current_product->Title; ?></h2>
 		</div>
 	</div>
 

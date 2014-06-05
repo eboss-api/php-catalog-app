@@ -78,7 +78,9 @@ $actions = array(
 	"range",
 	"products",
 	"product",
-	"downloads"
+	"downloads",
+	"bundle-download",
+	"buildcache"
 );
 
 $action = (isset($_GET['action']) && in_array($_GET['action'], $actions)) ? $_GET['action'] : "index";
