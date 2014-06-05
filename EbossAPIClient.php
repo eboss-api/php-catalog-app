@@ -20,7 +20,7 @@ class EbossAPIClient {
 	}
 
 	function SendRequest($object, $params = array()) {
-		if(isset($_GET['flush'])) $params['flush'] = 1;
+		//if(isset($_GET['flush'])) $params['flush'] = 1;
 		$query = ($params) ? "?".http_build_query($params) : "";
 		$url = $this->api_base.$object.$query;
 		$user_agent =  "EBOSS API Client v".self::$version;
@@ -69,19 +69,51 @@ class EbossAPIClient {
 		return $this->response;
 	}
 
+
+	function SendAsyncCacheRequest($url) {
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+			CURLOPT_URL => $url,
+			CURLOPT_FRESH_CONNECT => true,
+			CURLOPT_TIMEOUT_MS => 10
+		));
+
+		$resp = curl_exec($curl);
+		curl_close($curl);
+	}
+
+
 	function cachedRequest($object, $params = array()) {
-		$cacheKey = md5($this->api_base).$object."-".implode("-", $params);
-		if(!$data = $this->cache->get($cacheKey)) {
+		$buildcache = isset($_GET['buildcache']) ? true : false;
+
+		$key = md5($this->api_base).$object."-".implode("-", $params);
+		$data = $this->cache->get($key);
+		$is_expired = $this->cache->is_expired($key);
+
+		$do_build_cache = ($buildcache && $is_expired);
+
+		if(!$data || $do_build_cache) {
 			try {
 				$data = $this->SendRequest($object, $params);
-				$this->cache->write($cacheKey, $data);
+				$this->cache->write($key, $data);
 			} catch(Exception $e) {
 				throw $e;
 			}
+			return $data;
+		}
+
+		if($this->cache->is_expired($key)) {
+			$query = ($params) ? http_build_query($params) : "";
+			$current_url = "http://{$_SERVER['SERVER_NAME']}{$_SERVER['REQUEST_URI']}";
+
+			$buildurl = $current_url . (!strpos($current_url, "?") ? "?" : "&");
+			$buildurl.= "buildcache=true";
+			$this->SendAsyncCacheRequest($buildurl);
 		}
 		return $data;
-		
 	}
+
+
 
 	/**
 	* Returns Brand info for given ID
@@ -205,35 +237,36 @@ class EbossAPIClient_Response extends stdClass implements IteratorAggregate {
 
 class EbossAPIClient_Cache {
 
-	static $ttl = 3600;
+	static $ttl = 300;
 	static $cache_dir;
 
-	function get($name) {
-		$fname = $this->getCacheFilename($name);
-		if(isset($_GET['flush'])) {
-			return false;
-		}
-		if(function_exists('XXXzapc_fetch')) {
-			return apc_fetch($name);
-		}
-		if(file_exists($fname)) {
-			if(filemtime($fname)+self::$ttl > time()) {
-				$contents = file_get_contents($fname);
-				return unserialize($contents);
-			}
+	function get($key) {
+		$fname = $this->getCacheFilename($key);
+		if($this->exists($key)) {
+			$contents = file_get_contents($fname);
+			return unserialize($contents);
 		}
 	}
 
-	function write($name, $data) {
-		if(function_exists('XXXapc_fetch')) {
-			return apc_store($name, $data, self::$ttl);
+	function is_expired($key) {
+		$fname = $this->getCacheFilename($key);
+		if($this->exists($key)) {
+			return !(filemtime($fname)+self::$ttl > time());
 		}
+	}
+
+	function exists($key) {
+		$fname = $this->getCacheFilename($key);
+		return file_exists($fname);
+	}
+
+	function write($key, $data) {
 		$ser_data = serialize($data);
-		return file_put_contents($this->getCacheFilename($name), $ser_data);
+		return file_put_contents($this->getCacheFilename($key), $ser_data);
 	}
 
-	function getCacheFilename($name) {
-		return $this->getCacheDir()."/eboss_api_cache-".$name.".tmp";
+	function getCacheFilename($key) {
+		return $this->getCacheDir()."/eboss_api_cache-{$key}.tmp";
 	}
 
 	function getCacheDir() {

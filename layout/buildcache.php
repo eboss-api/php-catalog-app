@@ -3,7 +3,11 @@
 /*** Build cache dummy template ***/
 /** call this action via cron to generate cache files, speeding up client requests **/
 
-EbossAPIClient_Cache::$ttl = 1;
+//EbossAPIClient_Cache::$ttl = 1;
+
+print_r($_GET);
+
+die();
 
 $cached_brands = 0;
 $cached_products = 0;

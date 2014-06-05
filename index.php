@@ -80,7 +80,6 @@ $actions = array(
 	"product",
 	"downloads",
 	"bundle-download",
-	"buildcache"
 );
 
 $action = (isset($_GET['action']) && in_array($_GET['action'], $actions)) ? $_GET['action'] : "index";
@@ -90,9 +89,6 @@ $current_brand_id = $brand_id;
 $current_category_id = 	isset($_GET['category_id']) ? 	(int)$_GET['category_id'] 	: false;
 $current_range_id = 	isset($_GET['range_id']) 	? 	(int)$_GET['range_id'] 		: false;
 $current_product_id = 	isset($_GET['product_id']) 	? 	(int)$_GET['product_id'] 	: false;
-
-$current_downloader_url = $catalog_base_url."?action=downloads";
-$current_downloader_url.= ($current_product_id) ? "&amp;product_id=".$current_product_id : "";
 
 try {
 	$current_brand = ($current_brand_id) ? 
