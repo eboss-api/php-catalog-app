@@ -1,35 +1,52 @@
 <?php if($include_header) include("includes/header.php"); ?>
-
+<?php $downloads = $client->ProductDownloads($current_brand_id, $current_product_id); ?>
+<?php $section = $_GET['section']; ?>
+<?php $section = @$downloads->$section; ?>
+<?php $documents = $section->Documents; ?>
 <div id="Downloads">
-	<div id="Search" class="row-fluid">
-		<div id="BrandLogo" class="span3">
-			<img src="<?php echo $current_brand->LogoURL; ?>" alt="<?php echo $current_brand->Title; ?> Logo"/>
-		</div>
-		<div class="span9">
-			<h2><?php echo $current_product->Title; ?></h2>
+	<div class="border-box header">
+		<div class="row-fluid">
+			<div id="BrandLogo" class="span">
+				<img src="<?php echo $current_brand->LogoURL; ?>" alt="<?php echo $current_brand->Title; ?> Logo"/>
+			</div>
+			<div id="Title" class="span">
+				<h2><?php echo $current_product->Title; ?></h2>
+				<h3><?php echo $section->Label; ?></h3>
+			</div>
 		</div>
 	</div>
+	<div class="row-fluid doc-line">
+		<?php if($documents): ?>
+		<?php foreach($documents as $i => $document): ?>
+			<?php $mod = $i%2;?>
 
-	<div class="row-fluid">
-		<div class="span3 downloads-sidebar">
-			<?php include("includes/downloads_sidebar.php"); ?>
-		</div>
-		<?php if($current_product): ?>
-			<div class="span9 downloads-main">
-				<?php $downloads = $client->ProductDownloads($current_brand_id, $current_product_id); ?>
-				<form id="DownloadForm" action="<?php echo $downloads->FormActionURL; ?>" method="post">
-					<div class="accordion" id="FileDownloads">
-						<div class="accordion-group">
-							<?php include("includes/downloads_caddownloads.php"); ?>
-							<?php include("includes/downloads_otherdownloads.php"); ?>
+			<div class="span6">
+				<div class="row-fluid document">
+					<div class="span5">
+						<div class="border-box">
+							<div >
+								<a class="preview" href="<?php echo $document->PreviewImageURL;?>" target="_blank"><i class="preview-icon"></i><img src="<?php echo $document->PreviewThumbnailURL;?>"/></a>
+							</div>
 						</div>
 					</div>
-				</form>
+					<div class="span7">
+						<h4><?php echo $document->Title; ?>
+							<?php if($document->ReferenceNumber): ?>
+								<small><?php echo $document->ReferenceNumber; ?></small>
+						<?php endif; ?></h4>
+						<ul class="extension_downloads">
+						<?php foreach($document->Files as $extension): ?>
+							<li class="file extension_<?php echo strtolower($extension->Extension); ?>"><a href="<?php echo $extension->URL; ?>"><?php echo $extension->Extension; ?></a></li> 
+						<?php endforeach; ?>
+						</ul>
+					</div>
+				</div>
 			</div>
-		<?php else: ?>
-			<div class="span9">
-				<h4>Please choose a product to begin</h4>
-			</div>
+			<?php if(($mod==1) && count($documents)-1!=$i):?>
+			</div><div class="row-fluid doc-line">
+			<?php endif; ?>
+		
+		<?php endforeach; ?>
 		<?php endif; ?>
 	</div>
 </div>

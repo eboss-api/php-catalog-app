@@ -68,7 +68,7 @@
 	</div>
 
 	<div id="ProductInformation" class="span3">
-		<?php if($productInformation = $current_product->ProductInformation): ?>
+		<?php if($productInformation = $current_product->ProductInformation): ?> 
 		<?php foreach($productInformation as $key => $informationType): ?>
 		<div class="information_type">
 			<h4 class="heading"><?php echo $key; ?></h4>
@@ -79,7 +79,6 @@
 			</ul>
 		</div>
 		<?php endforeach; ?>
-		<a class="bundle_download action_button" href="<?php echo $current_downloader_url; ?>" role="button">Bundle download</a>
 		<?php endif; ?>
 	</div>
 </div>

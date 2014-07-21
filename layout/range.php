@@ -22,6 +22,6 @@
 	</div>
 </div>
 
-<?php include("includes/download_modal.php"); ?>
+<?php //include("includes/download_modal.php"); ?>
 
 <?php if($include_footer) include("includes/footer.php"); ?>
