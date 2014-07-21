@@ -5,6 +5,7 @@ jQuery(function($) {
 		window.parent.postMessage("resizeIframe:"+targetHeight,"*");
 	}
 	
+	/*
 	$(".bundle_download.action_button").on("click", function(e) {
 		e.preventDefault();
 		if(window.self===window.top) {
@@ -13,10 +14,32 @@ jQuery(function($) {
 			window.open($(this).attr("href"),"EbossDownloader","width=1015,height:800,scrollbars=yes");
 		}
 	});
+	*/
 
 	$("a.toggle_downloader").on("click", function(e) {
 		e.preventDefault();
-		$(".bundle_download.action_button").trigger("click");
+		var url = "?action=downloads"+
+			"&product_id="+$(this).data("productid")+
+			"&section="+$(this).data("section");
+
+		window.open(url,"_blank","width=1015,height=800,scrollbars=yes");
+		/*
+		if(window.self===window.top) {
+			$('#DownloadModal').modal().find("iframe").attr("src", url);
+		} else {
+			window.open(url,"EbossDownloader","width=1015,height:800,scrollbars=yes");
+		}
+		*/
+	});
+
+	$("#Downloads .file.extension_pdf a").on("click", function(e) {
+		e.preventDefault();
+		window.open($(this).attr("href"),"_blank","width=960,height=760,scrollbars=yes");
+	});
+
+	$("#Downloads a.preview").on("click", function(e) {
+		e.preventDefault();
+		window.open($(this).attr("href"),"_blank","width=840,height=480,scrollbars=yes");
 	});
 
 	$("a[data-toggle='popover']").popover({
