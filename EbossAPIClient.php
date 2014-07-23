@@ -75,7 +75,8 @@ class EbossAPIClient {
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => $url,
 			CURLOPT_FRESH_CONNECT => true,
-			CURLOPT_TIMEOUT_MS => 10
+			CURLOPT_TIMEOUT_MS => 1,
+			CURLOPT_NOSIGNAL => 1
 		));
 
 		$resp = curl_exec($curl);
