@@ -12,7 +12,7 @@ class EbossAPIClient {
 
 	static $version = "1";
 
-	function __construct($api_user, $api_key, $api_base = "http://www.eboss.co.nz/api/v2/") {
+	function __construct($api_user, $api_key, $api_base = "https://www.eboss.co.nz/api/v2/") {
 		$this->cache = new EbossAPIClient_Cache;
 		$this->api_user = $api_user;
 		$this->api_key = $api_key;
