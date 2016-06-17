@@ -75,11 +75,15 @@ class EbossAPIClient {
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => $url,
 			CURLOPT_FRESH_CONNECT => true,
-			CURLOPT_TIMEOUT_MS => 1,
+			//CURLOPT_CONNECTTIMEOUT_MS => 500,
+			CURLOPT_TIMEOUT => 1,
+			CURLOPT_TIMEOUT_MS => 500,
 			CURLOPT_NOSIGNAL => 1
 		));
+		//add CURLOPT_RESOLVE => here to save time during DNS lookup?
 
 		$resp = curl_exec($curl);
+		$curl_error = curl_error($curl);
 		curl_close($curl);
 	}
 
@@ -93,7 +97,8 @@ class EbossAPIClient {
 
 		$do_build_cache = ($buildcache && $is_expired);
 
-		if(!$data || $do_build_cache) {
+		if(!$data || $do_build_cache || isset($_GET['flush'])) {
+			ignore_user_abort(true);
 			try {
 				$data = $this->SendRequest($object, $params);
 				$this->cache->write($key, $data);
