@@ -25,10 +25,6 @@
 </div>
 <?php endif; ?>
 
-<div id="DownloadButton" class="menu">
-	<a class="bundle_download action_button" href="<?php echo $current_downloader_url; ?>" role="button">Bundle download</a>
-</div>
-
 <div id="ContactMenu" class="menu">
 	<h5 class="heading">Contact</h5>
 	<ul class="clean_list">
