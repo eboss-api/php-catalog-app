@@ -73,6 +73,7 @@ class EbossAPIClient {
 	function SendAsyncCacheRequest($url) {
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
+			CURLOPT_RETURNTRANSFER => 1,
 			CURLOPT_URL => $url,
 			CURLOPT_FRESH_CONNECT => true,
 			//CURLOPT_CONNECTTIMEOUT_MS => 500,
